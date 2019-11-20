@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SaleTicketList" pageWidth="1665" pageHeight="842" columnWidth="1665" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isIgnorePagination="true" uuid="6c06d915-8947-40d8-8190-6055501c1422">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\dennyzhu\\Desktop\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT p.PERIOD ,au.USERNAME ,au.FULL_NAME,au.NRC,au.MOBILE_NO,lr.LOTTERY_CATEGORY,
+lr.LOTTERY_CATEGORY_NAME,lr.SUB_CATEGORY_ID,lr.SUB_CATEGORY_NAME,ltn.LOTTERY_NUMBER,
+wn.WINNIN_GRADE,wn.WINNIN_NAME,wn.WINNIN_NUMBER,wn.WINNIN_SUM,wn.WINNIN_ID
+from LOTTERY.dbo.INPUT_WINNIN_NO wn
+join LOTTERY.dbo.PERIOD p on p.ID=wn.PERIOD_ID and p.PERIOD_STATE='1'
+left join LOTTERY.dbo.LOTTERY_NUMBER ltn on ltn.LOTTERY_PERIODS = :periods  ltn.LOTTERY_NUMBER like wn.WINNIN_NUMBER
+left join lottery.dbo.LOTTERY_RULE lr on lr.ID=ltn.RULE_ID
+left JOIN LOTTERY.dbo.ANDROID_USER au on au.USERNAME=ltn.PURCHASE_BY_NAME
+where WINNIN_PERIOD='20180606'
+order by au.FULL_NAME DESC,wn.WINNIN_GRADE ASC]]>
+	</queryString>
+	<field name="period" class="java.lang.String"/>
+	<field name="username" class="java.lang.String"/>
+	<field name="fullName" class="java.lang.String"/>
+	<field name="nrc" class="java.lang.String"/>
+	<field name="mobileNo" class="java.lang.String"/>
+	<field name="lotteryCategoryName" class="java.lang.String"/>
+	<field name="subCategoryName" class="java.lang.String"/>
+	<field name="winninGrade" class="java.lang.Integer"/>
+	<field name="winninName" class="java.lang.String"/>
+	<field name="winninNumber" class="java.lang.String"/>
+	<field name="winninSum" class="java.math.BigDecimal"/>
+	<field name="lotteryNumber" class="java.lang.String"/>
+	<group name="totalPrice">
+		<groupExpression><![CDATA[$F{username}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="0" width="1665" height="45" forecolor="#000000" uuid="916a75e9-e034-463c-b3b1-993f54e55aeb"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Customer Winning Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="31" y="0" width="79" height="40" forecolor="#FFFFFF" backcolor="#0053AD" uuid="bd1ca806-7392-4400-8e59-d72f5e0c7c52"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Round]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="31" height="40" forecolor="#FFFFFF" backcolor="#0053AD" uuid="47c175dc-70d4-4925-973b-2748629bd6fc"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="110" y="0" width="231" height="40" forecolor="#FFFFFF" backcolor="#0053AD" uuid="c1882a54-b33f-4a13-a43a-e8f6790eb1fd"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[User Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="341" y="0" width="161" height="40" forecolor="#FFFFFF" backcolor="#0053AD" uuid="aaa919df-5b2b-4320-a6cb-e4f06b68d21f"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Full Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="502" y="0" width="119" height="40" forecolor="#FFFFFF" backcolor="#0053AD" uuid="7a52f5de-9be1-4bef-8b65-35798a114ea4"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID Card]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="621" y="0" width="140" height="40" forecolor="#FFFFFF" backcolor="#0053AD" uuid="cdc1875e-cd7e-4b52-b1c4-79a1f3326ebd"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telephone]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="761" y="0" width="120" height="40" forecolor="#FFFFFF" backcolor="#0053AD" uuid="fd982d28-7f1c-4252-9b15-5da8e6bf78d8"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Category]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="881" y="0" width="160" height="40" forecolor="#FFFFFF" backcolor="#0053AD" uuid="394dd121-bc51-49c6-9951-ad57dd24cb71"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sub Category]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1041" y="0" width="103" height="40" forecolor="#FFFFFF" backcolor="#0053AD" uuid="8edd4455-216b-4a7b-ae27-94086d4f6af1"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lottery Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1144" y="0" width="160" height="40" forecolor="#FFFFFF" backcolor="#0053AD" uuid="8b9ef4c3-2920-4403-ae43-292b400083e1"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Winning Grade]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1304" y="0" width="160" height="40" forecolor="#FFFFFF" backcolor="#0053AD" uuid="bea5f980-bb74-4fde-ae1c-ebfe9c891ddb"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Winning Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1464" y="0" width="105" height="40" forecolor="#FFFFFF" backcolor="#0053AD" uuid="874c16d6-7103-4b60-885b-795036e4a8a9"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Winning Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1569" y="0" width="97" height="40" forecolor="#FFFFFF" backcolor="#0053AD" uuid="aef4e23a-a56a-49c1-b535-454b90cab929"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Winning amount]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="502" y="0" width="119" height="24" uuid="4765c4dc-d1a2-4b38-af28-c38b5e81406d"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nrc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1464" y="0" width="105" height="24" uuid="5f3bfbc2-386a-48b9-a1d6-55b375b21638"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{winninNumber}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="761" y="0" width="120" height="24" uuid="632e0b9e-f923-4adf-8b9d-9d64baf27701"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{lotteryCategoryName}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="341" y="0" width="161" height="24" uuid="50706a93-846e-4483-93e9-5d430c24ed31"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{fullName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1144" y="0" width="160" height="24" uuid="41bec7a0-92ec-4ad1-811d-7f7f7c6b3828"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{winninGrade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1569" y="0" width="97" height="24" uuid="3096a4f7-3b2c-492b-8712-47ee3f76cf25"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{winninSum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1304" y="0" width="160" height="24" uuid="e692a8c8-7a71-4da2-8383-460233d49a56"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{winninName}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="881" y="0" width="160" height="24" uuid="09d4a696-d11a-4d2e-bc88-750497303dee"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{subCategoryName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="31" height="24" uuid="425149c1-1b1f-4bc6-a76b-ea2c5bcd9f37"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="1041" y="0" width="103" height="24" uuid="c3223727-e2f8-4253-8c70-bf017f6249a2"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{lotteryNumber}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="621" y="0" width="140" height="24" uuid="8261e54c-f050-4f4c-aad3-7ed0d3d9cd09"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{mobileNo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="110" y="0" width="231" height="24" uuid="23ebf94a-9dc6-43ca-93f3-da7e15c58cf2"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{username}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="31" y="0" width="79" height="24" uuid="0b51cf1f-1ea9-4e37-8a72-7470738dda1d"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{period}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

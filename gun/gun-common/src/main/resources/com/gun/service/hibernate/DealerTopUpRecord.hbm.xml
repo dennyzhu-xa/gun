@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-6-1 18:10:41 by Hibernate Tools 4.0.1.Final -->
+<hibernate-mapping>
+    <class name="com.cyber.lottery.common.entity.DealerTopUpRecord" table="DEALER_TOPUP_RECORD" schema="dbo">
+        <id name="id" type="integer">
+            <column name="ID" precision="18" scale="0" />
+            <generator class="identity" />
+        </id>
+        <property name="nearbyStoresId" type="integer">
+            <column name="NEARBY_STORES_ID" length="18" not-null="true" />
+        </property>
+        <property name="dealerName" type="string">
+            <column name="DEALER_NAME" length="150" />
+        </property>
+        <property name="contactPhoneNumber" type="string">
+            <column name="CONTACT_PHONE_NUMBER" length="50" />
+        </property>
+        <property name="reserveTelephone" type="string">
+            <column name="RESERVE_TELEPHONE" length="50" />
+        </property>
+        <property name="rechargeAmount" type="big_decimal">
+            <column name="RECHARGE_AMOUNT" precision="16" />
+        </property>
+        <property name="rechargeAmountCap" type="big_decimal">
+            <column name="RECHARGE_AMOUNT_CAP" precision="16" />
+        </property>
+        <property name="prepaidAmount" type="big_decimal">
+            <column name="PREPAID_AMOUNT" precision="16" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="CREATED_DATE" length="23" />
+        </property>
+        <property name="createdById" type="string">
+            <column name="CREATED_BY_ID" length="50" />
+        </property>
+        <property name="createdByName" type="string">
+            <column name="CREATED_BY_NAME" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

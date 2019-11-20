@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-7-7 14:29:10 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cyber.lottery.common.entity.Wallet"  table="WALLET" schema="dbo">
+        <id name="id" type="big_decimal">
+            <column name="ID" precision="18" scale="0"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="createdDate" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="23" name="CREATED_DATE"/>
+        </property>
+        <property generated="never" lazy="false" name="updatedDate" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="23" name="UPDATED_DATE"/>
+        </property>
+        <property generated="never" lazy="false" name="androidUserId" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="ANDROID_USER_ID" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="balance" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="BALANCE" not-null="true" precision="20"/>
+        </property>
+        <property generated="never" lazy="false" name="walletType" optimistic-lock="true" type="byte" unique="false">
+            <column name="WALLET_TYPE" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

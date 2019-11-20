@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cyber.lottery.common.entity.Advertisement" table="ADVERTINFO" schema="dbo">
+        <id name="id" type="integer">
+            <column name="ID" precision="18" scale="0" />
+            <generator class="identity" />
+        </id>
+        <property name="adverName" type="string">
+            <column name="ADVERT_NAME" />
+        </property>
+        <property name="adverImg" type="binary">
+            <column name="ADVERT_IMG" />
+        </property>
+        <property name="adverURL" type="string">
+            <column name="ADVERT_URL" />
+        </property>
+        <property name="supplier" type="string">
+            <column name="SUPPLIER" />
+        </property>
+        <property name="priority" type="integer">
+            <column name="PRIORITY" />
+        </property>
+        <property name="validityStartDate" type="string">
+            <column name="VALIDITY_START_DATE" />
+        </property>
+        <property name="validityEndDate" type="string">
+            <column name="VALIDITY_END_DATE" />
+        </property>
+        <property name="createDate" type="java.util.Date">
+            <column name="CREAT_DATE" />
+        </property>
+        <property name="imageURL" type="string">
+            <column name="IMAGE_URL" />
+        </property>
+        <property name="createById" type="string">
+            <column name="CREATE_BY_ID" length="50" />
+        </property>
+        <property name="createdByName" type="string">
+            <column name="CREATED_BY_NAME" />
+        </property>
+        <property name="updatedById" type="string">
+            <column name="UPDATED_BY_ID" length="50" />
+        </property>
+        <property name="updatedByName" type="string">
+            <column name="UPDATED_BY_NAME" />
+        </property>
+        <property name="updatedDate" type="timestamp">
+            <column name="UPDATED_DATE" length="23" />
+        </property>
+        <property name="approveState" type="string">
+            <column name="APPROVE_STATE" length="30" />
+        </property>
+        <property name="approveStateName" type="string">
+            <column name="APPROVE_STATE_NAME" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

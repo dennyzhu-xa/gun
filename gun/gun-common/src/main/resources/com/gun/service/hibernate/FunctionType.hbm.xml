@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-7-15 15:33:32 by Hibernate Tools 4.0.1.Final -->
+<hibernate-mapping>
+    <class name="com.gun.common.entity.FunctionType" table="FUNCTION_TYPE" schema="db_owner">
+        <id name="functionId" type="string">
+            <column name="function_id" length="30" />
+            <generator class="assigned" />
+        </id>
+        <property name="functionName" type="string">
+            <column name="function_name" length="100" />
+        </property>
+        <property name="functionCode" type="string">
+            <column name="function_code" length="20" />
+        </property>
+        <property name="functionDescription" type="string">
+            <column name="function_description" length="100" />
+        </property>
+        <property name="functionUrl" type="string">
+            <column name="function_url" length="200" />
+        </property>
+        <property name="buttons" type="string">
+            <column name="buttons" length="200" />
+        </property>
+        <property name="parentFunctionId" type="string">
+            <column name="parent_function_id" length="30" />
+        </property>
+        <property name="functionOrder" type="java.lang.Integer">
+            <column name="function_order" />
+        </property>
+        <property name="createdById" type="string">
+            <column name="created_by_id" length="50" />
+        </property>
+        <property name="createdByName" type="string">
+            <column name="created_by_name" length="50" />
+        </property>
+        <property name="createdDate" type="string">
+            <column name="created_date" length="10" />
+        </property>
+        <property name="updatedById" type="string">
+            <column name="updated_by_id" length="50" />
+        </property>
+        <property name="updatedByName" type="string">
+            <column name="updated_by_name" length="50" />
+        </property>
+        <property name="updatedDate" type="string">
+            <column name="updated_date" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

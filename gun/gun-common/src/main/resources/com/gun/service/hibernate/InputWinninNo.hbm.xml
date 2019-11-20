@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017/7/3 ?U?? 06:04:37 by Hibernate Tools 4.0.0.Final -->
+<hibernate-mapping>
+    <class name="com.cyber.lottery.common.entity.InputWinninNo" table="INPUT_WINNIN_NO" schema="dbo">
+        <id name="winninId" type="string">
+            <column name="WINNIN_ID" length="30" />
+            <generator class="assigned" />
+        </id>
+        <property name="winninPeriod" type="string">
+            <column name="WINNIN_PERIOD" length="30" />
+        </property>
+        <property name="winninGrade" type="int">
+            <column name="WINNIN_GRADE" />
+        </property>
+        <property name="winninNumber" type="string">
+            <column name="WINNIN_NUMBER" length="30" />
+        </property>
+        <property name="winninSum" type="big_decimal">
+            <column name="WINNIN_SUM" precision="20" />
+        </property>
+        <property name="createById" type="string">
+            <column name="CREATE_BY_ID" length="50" />
+        </property>
+        <property name="createdByName" type="string">
+            <column name="CREATED_BY_NAME" length="50" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="CREATED_DATE" length="23" />
+        </property>
+        <property name="updatedById" type="string">
+            <column name="UPDATED_BY_ID" length="50" />
+        </property>
+        <property name="updatedByName" type="string">
+            <column name="UPDATED_BY_NAME" length="50" />
+        </property>
+        <property name="updatedDate" type="timestamp">
+            <column name="UPDATED_DATE" length="23" />
+        </property>
+        <property name="periodId" type="string">
+            <column name="PERIOD_ID" length="30" />
+        </property>
+        <property name="ourCompanyProduct" type="string">
+            <column name="OUR_COMPANY_PRODUCT" length="30" />
+        </property>
+        <property name="winninName" type="string">
+            <column name="WINNIN_NAME" length="100" />
+        </property>
+        <property name="winninNameString" type="string">
+            <column name="WINNIN_NAME_STRING" length="100" />
+        </property>
+        <property name="effectiveDate" type="string">
+            <column name="EFFECTIVE_DATE" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

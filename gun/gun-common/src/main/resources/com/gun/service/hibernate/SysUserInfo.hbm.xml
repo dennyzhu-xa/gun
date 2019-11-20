@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-6-1 18:10:41 by Hibernate Tools 4.0.1.Final -->
+<hibernate-mapping>
+    <class name="com.cyber.lottery.common.entity.SysUserInfo" table="SYS_USER_INFO" schema="dbo">
+        <id name="id" type="integer">
+            <column name="ID" precision="18" scale="0" />
+            <generator class="identity" />
+        </id>
+        <property name="userId" type="string">
+            <column name="USER_ID" length="30" not-null="true" />
+        </property>
+        <property name="userName" type="string">
+            <column name="USER_NAME" length="30" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="EMAIL" length="30" />
+        </property>
+        <property name="lastLogintime" type="timestamp">
+            <column name="LAST_LOGINTIME" length="23" />
+        </property>
+        <property name="password" type="string">
+            <column name="PASSWORD" length="200" not-null="true" />
+        </property>
+        <property name="roleId" type="integer">
+            <column name="ROLE_ID" not-null="true" />
+        </property>
+        <property name="telephone" type="string">
+            <column name="TELEPHONE" length="15" />
+        </property>
+        <property name="createById" type="string">
+            <column name="CREATE_BY_ID" length="50" />
+        </property>
+        <property name="createdByName" type="string">
+            <column name="CREATED_BY_NAME" length="50" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="CREATED_DATE" length="23" />
+        </property>
+        <property name="updatedById" type="string">
+            <column name="UPDATED_BY_ID" length="50" />
+        </property>
+        <property name="updatedByName" type="string">
+            <column name="UPDATED_BY_NAME" length="50" />
+        </property>
+        <property name="updatedDate" type="timestamp">
+            <column name="UPDATED_DATE" length="23" />
+        </property>
+    </class>
+</hibernate-mapping>

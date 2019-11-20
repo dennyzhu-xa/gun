@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-7-26 14:14:41 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cyber.lottery.common.entity.DealerAccountLog" dynamic-insert="true"  schema="dbo" table="DEALER_ACCOUNT_LOG">
+        <id name="transactionNumber" type="string">
+            <column name="TRANSACTION_NUMBER"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="transactionType" type="string">
+            <column name="TRANSACTION_TYPE" length="30" />
+        </property>
+        <property name="logTime" type="string">
+            <column name="LOG_TIME" length="30" />
+        </property>
+        <property name="dealerId" type="int">
+            <column name="DEALER_ID" not-null="true"/>
+        </property>
+        <property name="depositAmount" type="big_decimal">
+            <column name="DEPOSIT_AMOUNT" not-null="true" precision="20"/>
+        </property>
+        <property name="amountCap" type="big_decimal">
+            <column name="AMOUNT_CAP" not-null="true" precision="20"/>
+        </property>
+        <property name="addedAmount" type="big_decimal">
+            <column name="ADDED_AMOUNT" not-null="true" precision="20"/>
+        </property>
+        <property name="surplusAmount" type="big_decimal">
+            <column name="SURPLUS_AMOUNT" not-null="true" precision="20"/>
+        </property>
+        <property name="prepaidAmount" type="big_decimal">
+            <column name="PREPAID_AMOUNT" not-null="true" precision="20"/>
+        </property>
+        <property name="note" type="string">
+            <column name="NOTE" length="200" />
+        </property>
+        <property name="transactionById" type="string" >
+            <column length="50" name="TRANSACTION_BY_ID"/>
+        </property>
+        <property name="transactionByName" type="string" >
+            <column length="50" name="TRANSACTION_BY_NAME"/>
+        </property>
+        <property name="transactionDate" type="timestamp" >
+            <column length="23" name="TRANSACTION_DATE"/>
+        </property>
+    </class>
+</hibernate-mapping>

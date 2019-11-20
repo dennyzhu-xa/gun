@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-7-26 14:14:41 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gun.common.entity.OilWell" schema="public" dynamic-update="true" table="oil_well">
+        <id name="id" type="integer">
+            <column name="id" precision="18" scale="0" />
+            <generator class="identity" />
+        </id>
+        <property name="wellType" type="string">
+            <column name="well_type" length="30" />
+        </property>
+        <property name="ownName" type="string">
+            <column name="own_name" length="200" />
+        </property>
+        <property name="oilNo" type="string">
+            <column name="oil_no" length="30" />
+        </property>
+        <property name="area" type="string">
+            <column name="area" length="100" />
+        </property>
+        <property name="manualDeep" type="string">
+            <column name="manual_deep" length="100" />
+        </property>
+        <property name="levelQuanlity" type="int">
+            <column name="level_quanlity"/>
+        </property>
+        <property name="surfaceTemperature" type="string">
+            <column name="surface_temperature" length="30" />
+        </property>
+        <property name="oilTemperature" type="string">
+            <column name="oil_temperature" length="30" />
+        </property>
+        <property name="equipmentModelId" type="string">
+            <column name="equipment_model_id" length="30" />
+        </property>
+        <property name="equipments" type="string">
+            <column name="equipments" length="100" />
+        </property>
+        <property name="spacerModelId" type="string">
+            <column name="spacer_model_id" length="30" />
+        </property>
+        <property name="spacers" type="string">
+            <column name="spacers" length="100" />
+        </property>
+        <property name="perforatingId" type="string">
+            <column name="perforating_id" length="30" />
+        </property>
+        <property name="connectId" type="string">
+            <column name="connect_id" length="30" />
+        </property>
+        <property name="phase" type="string">
+            <column name="phase" length="30" />
+        </property>
+		<property name="extraLength" type="double">
+            <column name="extra_length"/>
+        </property>
+		<property name="use3M" type="char">
+            <column name="is3M"/>
+        </property>
+        <property name="safetyLength" type="int">
+            <column name="safety_length"/>
+        </property>
+        <property name="techRemark" type="text">
+            <column name="tech_remark" />
+        </property>
+        <property name="createById" type="string" >
+            <column length="50" name="create_by_id"/>
+        </property>
+        <property name="createdByName" type="string" >
+            <column length="50" name="created_by_name"/>
+        </property>
+        <property name="createdDate" type="timestamp" >
+            <column length="23" name="created_date"/>
+        </property>
+        <property name="updatedById" type="string" >
+            <column length="50" name="UPDATED_BY_ID"/>
+        </property>
+        <property name="updatedByName" type="string" >
+            <column length="50" name="UPDATED_BY_NAME"/>
+        </property>
+        <property name="updatedDate" type="timestamp" >
+            <column length="23" name="UPDATED_DATE"/>
+        </property>
+    </class>
+</hibernate-mapping>

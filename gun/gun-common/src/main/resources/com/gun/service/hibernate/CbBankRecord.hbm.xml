@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-10-26 18:09:57 by Hibernate Tools 4.0.1.Final -->
+<hibernate-mapping>
+    <class name="com.cyber.lottery.common.entity.CbBankRecord" table="CB_BANK_RECORD" schema="dbo">
+        <id name="ref" type="string">
+            <column name="REF_ID" length="30" />
+            <generator class="assigned" />
+        </id>
+        <property name="androidUserId" type="big_decimal">
+            <column name="ANDROID_USER_ID" precision="18" scale="0" />
+        </property>
+        <property name="merchant" type="string">
+            <column name="MERCHANT" length="30" />
+        </property>
+        <property name="invoice" type="string">
+            <column name="INVOICE" length="30" />
+        </property>
+        <property name="currency" type="string">
+            <column name="CURRENCY" length="30" />
+        </property>
+        <property name="itemname" type="string">
+            <column name="ITEMNAME" length="30" />
+        </property>
+        <property name="itemdesc" type="string">
+            <column name="ITEMDESC" length="30" />
+        </property>
+        <property name="proceed" type="string">
+            <column name="PROCEED" length="30" />
+        </property>
+        <property name="bankref" type="string">
+            <column name="BANKREF" length="30" />
+        </property>
+        <property name="amount" type="string">
+            <column name="AMOUNT" length="30" />
+        </property>
+        <property name="account" type="string">
+            <column name="ACCOUNT" length="30" />
+        </property>
+        <property name="processtime" type="string">
+            <column name="PROCESSTIME" length="30" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="CREATED_DATE" length="23" />
+        </property>
+        <property name="updatedDate" type="timestamp">
+            <column name="UPDATED_DATE" length="23" />
+        </property>
+        <property name="finishedDate" type="timestamp">
+            <column name="FINISHED_DATE" length="23" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017/7/3 ?U?? 05:10:24 by Hibernate Tools 4.0.0.Final -->
+<hibernate-mapping>
+    <class name="com.cyber.lottery.common.entity.LotteryRule" table="LOTTERY_RULE" schema="dbo">
+        <id name="id" type="integer">
+            <column name="ID" precision="18" scale="0" />
+            <generator class="identity" />
+        </id>
+        <property name="letterRole" type="string">
+            <column name="LETTER_ROLE" length="30" />
+        </property>
+        <property name="beginLetter" type="string">
+            <column name="BEGIN_LETTER" length="30" />
+        </property>
+        <property name="endLetter" type="string">
+            <column name="END_LETTER" length="30" />
+        </property>
+        <property name="numberRole" type="string">
+            <column name="NUMBER_ROLE" length="30" />
+        </property>
+        <property name="beginNumber" type="string">
+            <column name="BEGIN_NUMBER" length="30" />
+        </property>
+        <property name="endNumber" type="string">
+            <column name="END_NUMBER" length="30" />
+        </property>
+        <property name="status" type="string">
+            <column name="STATUS" length="30" />
+        </property>
+        <property name="statusName" type="string">
+            <column name="STATUS_NAME" length="30" />
+        </property>
+        <property name="lotteryPeriods" type="string">
+            <column name="LOTTERY_PERIODS" length="30" />
+        </property>
+        <property name="lotteryCategory" type="string">
+            <column name="LOTTERY_CATEGORY" length="50" />
+        </property>
+        <property name="lotteryCategoryName" type="string">
+            <column name="LOTTERY_CATEGORY_NAME" length="50" />
+        </property>
+        <property name="subCategoryId" type="integer">
+            <column name="SUB_CATEGORY_ID" />
+        </property>
+        <property name="subCategoryName" type="string">
+            <column name="SUB_CATEGORY_NAME" length="50" />
+        </property>
+        <property name="createById" type="string">
+            <column name="CREATE_BY_ID" length="50" />
+        </property>
+        <property name="createdByName" type="string">
+            <column name="CREATED_BY_NAME" length="50" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="CREATED_DATE" length="23" />
+        </property>
+        <property name="updatedById" type="string">
+            <column name="UPDATED_BY_ID" length="50" />
+        </property>
+        <property name="updatedByName" type="string">
+            <column name="UPDATED_BY_NAME" length="50" />
+        </property>
+        <property name="updatedDate" type="timestamp">
+            <column name="UPDATED_DATE" length="23" />
+        </property>
+        <property name="categoryImage" type="binary">
+            <column name="CATEGORY_IMAGE" />
+        </property>
+        <property name="categoryImageName" type="string">
+            <column name="CATEGORY_IMAGE_NAME" length="50"/>
+        </property>
+        <property name="offSale" type="string">
+            <column name="OFF_SALE" length="50" />
+        </property>
+        <property name="effectiveDate" type="string">
+            <column name="EFFECTIVE_DATE" length="10" />
+        </property>
+        <property name="subcategoryEffectiveDate" type="string">
+            <column name="SUBCATEGORY_EFFECTIVE_DATE" length="10" />
+        </property>
+        <property name="lotteryNumber" type="string">
+            <column name="LOTTERY_NUMBER" length="1000" />
+        </property>
+        <property name="batchStatus" type="string">
+            <column name="BATCH_STATUS" length="30" />
+        </property>
+        <property name="salePrice" type="int">
+            <column name="SALE_PRICE" />
+        </property>
+    </class>
+</hibernate-mapping>

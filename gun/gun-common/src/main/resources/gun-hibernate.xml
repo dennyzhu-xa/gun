@@ -1,0 +1,98 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop" 
+		xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+            http://www.springframework.org/schema/tx
+            http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+            http://www.springframework.org/schema/util 
+	        http://www.springframework.org/schema/util/spring-util-3.2.xsd
+	        http://www.springframework.org/schema/aop
+	        http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+ 	
+ 	<!-- DataSource Settings -->
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:database.properties</value>
+            </list>
+        </property>
+    </bean>
+
+	<bean id="dataSource" class="com.gun.dao.impl.DriverManagerDataSource">
+        <property name="driverClassName" value="${jdbc.driver}" />
+        <property name="url" value="${jdbc.url}" />
+        <property name="username" value="${jdbc.user}" />
+        <property name="password" value="${jdbc.password}" />
+    </bean>
+ 	
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="mappingResources">
+			<list>	
+				<value>com/gun/service/hibernate/UserInfo.hbm.xml</value>
+				<value>com/gun/service/hibernate/FunctionType.hbm.xml</value>
+				<value>com/gun/service/hibernate/RoleAuthority.hbm.xml</value>
+				<value>com/gun/service/hibernate/RoleDef.hbm.xml</value>
+				<value>com/gun/service/hibernate/Equipment.hbm.xml</value>
+				<value>com/gun/service/hibernate/EquipmentLog.hbm.xml</value>
+				<value>com/gun/service/hibernate/Joint.hbm.xml</value>
+				<value>com/gun/service/hibernate/JointLog.hbm.xml</value>
+				<value>com/gun/service/hibernate/Magazine.hbm.xml</value>
+				<value>com/gun/service/hibernate/MagazineLog.hbm.xml</value>
+				<value>com/gun/service/hibernate/Spacer.hbm.xml</value>
+				<value>com/gun/service/hibernate/SpacerLog.hbm.xml</value>
+				<value>com/gun/service/hibernate/PerforatingProjectile.hbm.xml</value>
+				<value>com/gun/service/hibernate/PerforatingProjectileLog.hbm.xml</value>
+				<value>com/gun/service/hibernate/OilWell.hbm.xml</value>
+				<value>com/gun/service/hibernate/WellLevel.hbm.xml</value>
+			</list>
+		</property>	
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">com.gun.server.dialect.SqlServerDialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.c3p0.max_size">20</prop>
+				<prop key="hibernate.c3p0.min_size">5</prop>
+				<prop key="hibernate.c3p0.timeout">120</prop>
+				<prop key="hibernate.c3p0.max_statements">100</prop>
+				<prop key="hibernate.c3p0.idle_test_period">1</prop>
+				<prop key="hibernate.c3p0.acquire_increment">2</prop>
+				<prop key="hibernate.c3p0.validate">true</prop>
+            </props> 
+        </property>
+    </bean>
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    
+    
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">  
+        <tx:attributes>  
+            <tx:method name="insert*" propagation="REQUIRED" />  
+            <tx:method name="save*" propagation="REQUIRED" />  
+            <tx:method name="update*" propagation="REQUIRED" />  
+            <tx:method name="delete*" propagation="REQUIRED" />  
+            <tx:method name="get*" propagation="REQUIRED" read-only="true"/>  
+            <tx:method name="query*" propagation="REQUIRED" read-only="true"/>  
+            <tx:method name="*" propagation="REQUIRED" />
+        </tx:attributes>  
+    </tx:advice>
+	
+	 <aop:config>  
+        <aop:pointcut id="daoMethods" expression="execution(* com.gun.service.*.*.*(..))" />      
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="daoMethods" />  
+    </aop:config> 
+    
+    <bean id="transactionAttributeSource"
+		class="org.springframework.transaction.interceptor.NameMatchTransactionAttributeSource">
+		<property name="properties">
+			<props>
+				<prop key="doService*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>	
+ <tx:annotation-driven transaction-manager="transactionManager"/>
+</beans>

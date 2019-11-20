@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-7-26 14:14:41 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gun.common.entity.SpacerLog" schema="public" dynamic-update="true" table="spacer_log">
+        <id name="id" type="integer">
+            <column name="id" precision="18" scale="0" />
+            <generator class="identity" />
+        </id>
+        <property name="spacerId" type="integer">
+            <column name="spacer_id"/>
+        </property>
+        <property name="logType" type="char">
+            <column name="log_Type" not-null="true" default="I"/>
+        </property>
+        <property name="oldQuantity" type="int">
+            <column name="old_quantity"/>
+        </property>
+        <property name="updateQuantity" type="int">
+            <column name="update_quantity"/>
+        </property>
+        <property name="logRemark" type="text">
+            <column name="log_remark" />
+        </property>
+        <property name="modifyId" type="string" >
+            <column length="50" name="MODIFY_ID"/>
+        </property>
+        <property name="modifyName" type="string" >
+            <column length="50" name="MODIFY_NAME"/>
+        </property>
+        <property name="modifyDate" type="timestamp" >
+            <column length="23" name="MODIFY_DATE"/>
+        </property>
+    </class>
+</hibernate-mapping>

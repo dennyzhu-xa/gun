@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-8-17 12:01:23 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class  name="com.cyber.lottery.common.entity.CheckTicketRecord" dynamic-insert="true" table="CHECK_TICKET_RECORD" schema="dbo">
+        <id name="id" type="big_decimal">
+            <column name="ID" precision="18" scale="0"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="androidUserId" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="ANDROID_USER_ID" not-null="true" precision="18" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="round" optimistic-lock="true" type="string" unique="false">
+            <column name="ROUND" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="letter" optimistic-lock="true" type="string" unique="false">
+            <column name="LETTER" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="beginNumber" optimistic-lock="true" type="string" unique="false">
+            <column name="BEGIN_NUMBER" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="endNumber" optimistic-lock="true" type="string" unique="false">
+            <column name="END_NUMBER" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="winninSum" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="WINNIN_SUM" precision="20"/>
+        </property>
+        <property generated="never" lazy="false" name="createdDate" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="23" name="CREATED_DATE"/>
+        </property>
+    </class>
+</hibernate-mapping>

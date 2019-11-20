@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-7-26 14:14:41 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gun.common.entity.WellLevel" schema="public" dynamic-update="true" table="well_level">
+        <id name="id" type="integer">
+            <column name="id" precision="18" scale="0" />
+            <generator class="identity" />
+        </id>
+        <property name="wellId" type="int">
+            <column name="well_id"  />
+        </property>
+        <property name="oilStart" type="double">
+            <column name="oil_start"/>
+        </property>
+        <property name="oilEnd" type="double">
+            <column name="oil_end"/>
+        </property>
+        <property name="levelDepth" type="double">
+            <column name="level_depth"/>
+        </property>
+        <property name="backinDepth" type="double">
+            <column name="backfin_depth"/>
+        </property>
+        <property name="deepSum" type="double">
+            <column name="deep_sum"/>
+        </property>
+        <property name="backfinSum" type="double">
+            <column name="backfin_SUM"/>
+        </property>
+    </class>
+</hibernate-mapping>

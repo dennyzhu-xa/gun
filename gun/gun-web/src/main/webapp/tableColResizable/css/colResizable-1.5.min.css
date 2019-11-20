@@ -1,0 +1,13 @@
+.cyberTable{text-align:left;overflow: auto;}
+.cyberTable table{TABLE-LAYOUT:fixed;word-break:break-all;word-wrap:break-word;}
+.cyberTable th{background-image:url('../images/th.png');  height:30px;  background-repeat:no-repeat;  color:white;  text-shadow: #012b4d 2px 2px 2px;  text-align: center;font-size: 14px;font-weight: normal;line-height: 20px; }
+.cyberTable td{padding:5px;color:#444;border-bottom:1px solid #bbb;border-left:1px solid #bbb;}
+.cyberTable td.left{border-left:1px solid #2e638e;}
+.cyberTable td.right{border-right:1px solid #2e638e;}
+.cyberTable td.bottom{border-bottom:1px solid #2e638e;}
+.grip{width:20px;height:30px;margin-top:-3px;background-image:url('../images/grip.png');margin-left:-5px;position:relative;z-index:88;cursor:e-resize;}
+.grip:hover{background-position-x:-20px;}
+.dragging .grip{background-position-x:-40px;}
+.sampleText{position:relative;width:100%;}
+input.check{}
+.dotted{background-image:url('../images/dotted.png');background-repeat:repeat-y;}

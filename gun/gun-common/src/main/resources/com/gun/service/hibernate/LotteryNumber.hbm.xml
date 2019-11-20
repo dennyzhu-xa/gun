@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017/7/5 ?U?? 01:45:43 by Hibernate Tools 4.0.0.Final -->
+<hibernate-mapping>
+    <class name="com.cyber.lottery.common.entity.LotteryNumber" table="LOTTERY_NUMBER" schema="dbo">
+        <id name="id" type="big_decimal">
+            <column name="ID" precision="18" scale="0" />
+            <generator class="identity" />
+        </id>
+        <property name="ruleId" type="integer">
+            <column name="RULE_ID" precision="18" scale="0" />
+        </property>
+        <property name="lotteryPeriods" type="string">
+            <column name="LOTTERY_PERIODS" length="30" />
+        </property>
+        <property name="letterRule" type="string">
+            <column name="LETTER_RULE" length="30" />
+        </property>
+        <property name="numberRule" type="string">
+            <column name="NUMBER_RULE" length="30" />
+        </property>
+        <property name="lotteryNumber" type="string">
+            <column name="LOTTERY_NUMBER" length="50" />
+        </property>
+        <property name="purchaseByName" type="string">
+            <column name="PURCHASE_BY_NAME" length="50" />
+        </property>
+        <property name="purchaseDate" type="timestamp">
+            <column name="PURCHASE_DATE" length="23" />
+        </property>
+        <property name="purchaseStatus" type="string">
+            <column name="PURCHASE_STATUS" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

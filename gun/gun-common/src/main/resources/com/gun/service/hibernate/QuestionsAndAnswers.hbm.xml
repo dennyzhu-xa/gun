@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-7-12 15:03:50 by Hibernate Tools 4.0.1.Final -->
+<hibernate-mapping>
+    <class name="com.cyber.lottery.common.entity.QuestionsAndAnswers" table="QUESTIONS_AND_ANSWERS" schema="dbo">
+        <id name="id" type="integer">
+            <column name="ID" precision="18" scale="0" />
+            <generator class="identity" />
+        </id>
+        <property name="category" type="string">
+            <column name="CATEGORY" length="20" />
+        </property>
+        <property name="categoryName" type="string">
+            <column name="CATEGORY_NAME" length="50" />
+        </property>
+        <property name="question" type="string">
+            <column name="QUESTION" length="200" />
+        </property>
+        <property name="answer" type="string">
+            <column name="ANSWER" length="4000" />
+        </property>
+        <property name="createById" type="string">
+            <column name="CREATE_BY_ID" length="50" />
+        </property>
+        <property name="createdByName" type="string">
+            <column name="CREATED_BY_NAME" length="50" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="CREATED_DATE" length="23" />
+        </property>
+        <property name="updatedById" type="string">
+            <column name="UPDATED_BY_ID" length="50" />
+        </property>
+        <property name="updatedByName" type="string">
+            <column name="UPDATED_BY_NAME" length="50" />
+        </property>
+        <property name="updatedDate" type="timestamp">
+            <column name="UPDATED_DATE" length="23" />
+        </property>
+    </class>
+</hibernate-mapping>

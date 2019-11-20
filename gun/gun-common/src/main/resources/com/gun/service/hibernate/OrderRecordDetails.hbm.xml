@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-7-26 14:14:41 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping >
+    <class name="com.cyber.lottery.common.entity.OrderRecordDetails" dynamic-insert="true" schema="dbo" table="ORDER_RECORD_DETAILS">
+        <id name="id" type="big_decimal">
+            <column name="ID" precision="18" scale="0"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="orderNumber" optimistic-lock="true" type="string" unique="false">
+            <column name="ORDER_NUMBER" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="lotteryRound" optimistic-lock="true" type="string" unique="false">
+            <column name="LOTTERY_ROUND" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="lotteryNumber" optimistic-lock="true" type="string" unique="false">
+            <column name="LOTTERY_NUMBER" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="winninSum" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="WINNIN_SUM" precision="20"/>
+        </property>
+        <property generated="never" lazy="false" name="createdDate" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="23" name="CREATED_DATE"/>
+        </property>
+        <property name="updatedById" type="string" >
+            <column length="50" name="UPDATED_BY_ID"/>
+        </property>
+        <property name="updatedByName" type="string" >
+            <column length="50" name="UPDATED_BY_NAME"/>
+        </property>
+        <property name="updatedDate" type="timestamp" >
+            <column length="23" name="UPDATED_DATE"/>
+        </property>
+    </class>
+</hibernate-mapping>

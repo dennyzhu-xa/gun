@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-11-28 16:57:13 by Hibernate Tools 4.0.1.Final -->
+<hibernate-mapping>
+    <class name="com.cyber.lottery.common.entity.BaseParameterTypeDef" table="BASE_PARAMETER_TYPE_DEF" schema="dbo">
+        <composite-id name="id" class="com.cyber.lottery.common.entity.BaseParameterTypeDefId">
+            <key-property name="bptdCode" type="string">
+                <column name="BPTD_CODE" length="30" />
+            </key-property>
+            <key-property name="effectiveDate" type="string">
+                <column name="EFFECTIVE_DATE" length="10" />
+            </key-property>
+        </composite-id>
+        <property name="ptName" type="string">
+            <column name="PT_NAME" length="100" not-null="true" />
+        </property>
+        <property name="isTree" type="string">
+            <column name="IS_TREE" length="1" />
+        </property>
+        <property name="ptDesc" type="string">
+            <column name="PT_DESC" length="500" />
+        </property>
+        <property name="variableType" type="string">
+            <column name="VARIABLE_TYPE" length="5" />
+        </property>
+        <property name="valueScopeOperator1" type="string">
+            <column name="VALUE_SCOPE_OPERATOR1" length="2" />
+        </property>
+        <property name="valueScopeOperator2" type="string">
+            <column name="VALUE_SCOPE_OPERATOR2" length="2" />
+        </property>
+        <property name="dataType" type="java.lang.Integer">
+            <column name="DATA_TYPE" />
+        </property>
+        <property name="ptLength" type="java.lang.Integer">
+            <column name="PT_LENGTH" />
+        </property>
+        <property name="approvedFlag" type="string">
+            <column name="APPROVED_FLAG" length="1" />
+        </property>
+        <property name="createdById" type="string">
+            <column name="CREATED_BY_ID" length="20" />
+        </property>
+        <property name="createdByName" type="string">
+            <column name="CREATED_BY_NAME" length="20" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="CREATED_DATE" length="23" />
+        </property>
+        <property name="updatedById" type="string">
+            <column name="UPDATED_BY_ID" length="20" />
+        </property>
+        <property name="updatedByName" type="string">
+            <column name="UPDATED_BY_NAME" length="20" />
+        </property>
+        <property name="updatedDate" type="timestamp">
+            <column name="UPDATED_DATE" length="23" />
+        </property>
+        <property name="isNeedApprovedByMgr" type="string">
+            <column name="IS_NEED_APPROVED_BY_MGR" length="1" />
+        </property>
+        <property name="mgrApprovedById" type="string">
+            <column name="MGR_APPROVED_BY_ID" length="20" />
+        </property>
+        <property name="mgrApprovedByName" type="string">
+            <column name="MGR_APPROVED_BY_NAME" length="20" />
+        </property>
+        <property name="mgrApprovedDate" type="timestamp">
+            <column name="MGR_APPROVED_DATE" length="23" />
+        </property>
+    </class>
+</hibernate-mapping>

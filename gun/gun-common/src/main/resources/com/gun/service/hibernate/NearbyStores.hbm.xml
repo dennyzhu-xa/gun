@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-6-1 18:10:41 by Hibernate Tools 4.0.1.Final -->
+<hibernate-mapping>
+    <class name="com.cyber.lottery.common.entity.NearbyStores" table="NEARBY_STORES" schema="dbo">
+        <id name="id" type="integer">
+            <column name="ID" precision="18" scale="0" />
+            <generator class="identity" />
+        </id>
+        <property name="dealerAccount" type="string">
+            <column name="DEALER_ACCOUNT" length="100" not-null="true" />
+        </property>
+        <property name="dealerPassword" type="string">
+            <column name="DEALER_PASSWORD" length="200" not-null="true" />
+        </property>
+        <property name="dealerName" type="string">
+            <column name="DEALER_NAME" length="150" not-null="true" />
+        </property>
+        <property name="dealerCategory" type="string">
+            <column name="DEALER_CATEGORY" length="50" not-null="true" />
+        </property>
+        <property name="personInCharge" type="string">
+            <column name="PERSON_IN_CHARGE" length="150" not-null="true" />
+        </property>
+        <property name="rechargeAmountCap" type="big_decimal">
+            <column name="RECHARGE_AMOUNT_CAP" precision="16" not-null="true" />
+        </property>
+        <property name="prepaidAmount" type="big_decimal">
+            <column name="PREPAID_AMOUNT" precision="16" not-null="true" />
+        </property>
+        <property name="depositAmount" type="big_decimal">
+            <column name="DEPOSIT_AMOUNT" precision="16" not-null="true" />
+        </property>
+        <property name="contactPhoneNumber" type="string">
+            <column name="CONTACT_PHONE_NUMBER" length="50" not-null="true" />
+        </property>
+        <property name="reserveTelephone" type="string">
+            <column name="RESERVE_TELEPHONE" length="50" not-null="true" />
+        </property>
+        <property name="longitude" type="string">
+            <column name="LONGITUDE" length="50" />
+        </property>
+        <property name="latitude" type="string">
+            <column name="LATITUDE" length="50" />
+        </property>
+        <property name="address" type="string">
+            <column name="ADDRESS" length="100" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="CREATED_DATE" length="23" />
+        </property>
+        <property name="createdById" type="string">
+            <column name="CREATED_BY_ID" length="50" />
+        </property>
+        <property name="createdByName" type="string">
+            <column name="CREATED_BY_NAME" length="50" />
+        </property>
+        <property name="updateDate" type="timestamp">
+            <column name="UPDATE_DATE" length="23" />
+        </property>
+        <property name="updateById" type="string">
+            <column name="UPDATE_BY_ID" length="50" />
+        </property>
+        <property name="updateByName" type="string">
+            <column name="UPDATE_BY_NAME" length="50" />
+        </property>
+        <property name="token" type="string" >
+            <column name="TOKEN" length="128"/>
+        </property>
+        <property name="firstLanding" type="string" >
+            <column name="FIRST_LANDING" length="1"/>
+        </property>
+        <property name="accumulatedAmount" type="big_decimal">
+            <column name="ACCUMULATED_AMOUNT" precision="16"/>
+        </property>
+        <property name="status" type="string" >
+            <column name="STATUS" length="15"/>
+        </property>
+    </class>
+</hibernate-mapping>

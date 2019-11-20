@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017/7/6 ?U?? 02:38:52 by Hibernate Tools 4.0.0.Final -->
+<hibernate-mapping>
+    <class name="com.cyber.lottery.common.entity.AdvertinfoPriority" table="ADVERTINFO_PRIORITY"  schema="dbo">
+        <id name="priorityId" type="integer">
+            <column name="PRIORITY_ID" precision="18" scale="0"/>
+            <generator class="identity" />
+        </id>
+        <property name="priorityName" type="string">
+            <column name="PRIORITY_NAME" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

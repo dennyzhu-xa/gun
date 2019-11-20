@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cyber.lottery.common.entity.ApkManagement" table="APK_MANAGEMENT" schema="dbo">
+        <id name="id" type="integer">
+            <column name="ID" precision="18" scale="0" />
+            <generator class="identity" />
+        </id>
+        <property name="appName" type="string">
+            <column name="APP_NAME" />
+        </property>
+        <property name="packageName" type="string">
+            <column name="PACKAGE_NAME" />
+        </property>
+        <property name="versionCode" type="string">
+            <column name="VERSION_CODE" />
+        </property>
+        <property name="versionName" type="string">
+            <column name="VERSION_NAME" />
+        </property>
+        <property name="minSDKVersion" type="string">
+            <column name="MIN_SDK_VERSION" />
+        </property>
+        <property name="releaseTime" type="java.util.Date">
+            <column name="RELEASE_TIME" />
+        </property>
+        <property name="download" type="string">
+            <column name="DOWNLOAD" />
+        </property>
+        <property name="filesize" type="string">
+            <column name="FILESIZE" />
+        </property>
+        <property name="deteleType" type="string">
+            <column name="DETELE_TYPE" />
+        </property>
+        <property name="context" type="string">
+            <column name="CONTEXT" />
+        </property>
+    </class>
+</hibernate-mapping>

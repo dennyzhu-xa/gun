@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-6-1 18:10:41 by Hibernate Tools 4.0.1.Final -->
+<hibernate-mapping>
+    <class name="com.gun.common.entity.RoleDef" table="ROLE_DEF" schema="db_owner">
+        <id name="roleId" type="integer">
+            <column name="role_id" precision="18" scale="0" />
+            <generator class="identity" />
+        </id>
+        <property name="roleName" type="string">
+            <column name="role_name" length="50" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

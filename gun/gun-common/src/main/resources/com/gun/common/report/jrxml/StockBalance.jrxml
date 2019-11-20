@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="StockBalance" pageWidth="950" pageHeight="842" columnWidth="950" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isIgnorePagination="true" uuid="b22f2863-2883-4e66-a6b3-43a4f7b6a568">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="periods" class="java.lang.String"/>
+	<parameter name="soldNumber" class="java.lang.Integer"/>
+	<parameter name="notForsaleNumber" class="java.lang.Integer"/>
+	<parameter name="sub_sold" class="net.sf.jasperreports.engine.JasperReport" isForPrompting="false"/>
+	<parameter name="sub_unsold" class="net.sf.jasperreports.engine.JasperReport" isForPrompting="false"/>
+	<field name="soldList" class="java.util.List"/>
+	<field name="unsoldList" class="java.util.List"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="192" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="298832cd-4c1f-4aef-9f05-d5a7aa19a24f" x="375" y="21" width="200" height="28"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Stock Balance]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9e292de5-7cf8-4f1d-909d-62c60c54d75d" x="30" y="81" width="141" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Number Of Periods :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c299af3c-1214-4adf-bdc2-a28ee33e1b68" x="30" y="116" width="141" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[       Sales Volumes  :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e6802b2c-530c-4d2c-8aec-118a3de98e38" x="30" y="151" width="141" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[  Inventory Quantity :]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="4abb7ed8-0ea0-4365-bb9f-552540e3ad92" x="171" y="81" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{periods}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="412d6de5-26b5-4914-8bc5-5b599eb57043" x="171" y="116" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{soldNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="fbcbd1c5-bd14-4d1c-9a10-9b377ba4b8c1" x="171" y="151" width="132" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{notForsaleNumber}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="dff874e0-8b73-48de-9b40-e9528606969c" mode="Opaque" x="700" y="116" width="45" height="20" backcolor="#50A150"/>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="06ab3487-4f4e-46b0-94c7-6284500ee8bf" mode="Opaque" x="700" y="151" width="45" height="20" backcolor="#AA0000"/>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0634d87d-cbf2-4b43-841c-0f6564d76614" x="745" y="116" width="76" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[    Sold]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f1b0fefd-704b-46bf-a828-8dc3134ea003" x="745" y="151" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[    Unsold]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1efa53f3-e152-416e-97ad-94909d9cdd61" x="950" y="0" width="0" height="192"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="557e0afc-b5cc-4fc6-81cf-6811d5ea8e91" mode="Opaque" x="0" y="0" width="200" height="21" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Category]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8732b90b-c065-4980-8193-c93c59556bbf" mode="Opaque" x="200" y="0" width="200" height="21" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sub Category]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="37cfc9d7-c371-4e56-80a7-dd96d9c1591d" mode="Opaque" x="400" y="0" width="200" height="21" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lottery Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2c3d2138-af34-46ee-abdc-84eca2ad2ba1" mode="Opaque" x="600" y="0" width="150" height="21" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a8205113-98d9-4832-add2-8e31e258f956" mode="Opaque" x="750" y="0" width="200" height="21" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Delete Date]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<printWhenExpression><![CDATA[$F{soldList}.size() > 0]]></printWhenExpression>
+			<subreport>
+				<reportElement uuid="a970f2aa-ff2b-4cfe-b029-2b5e0da3fc78" x="0" y="0" width="950" height="21"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{soldList})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{sub_sold}]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="21">
+			<printWhenExpression><![CDATA[$F{unsoldList}.size() > 0]]></printWhenExpression>
+			<subreport>
+				<reportElement uuid="33dd538b-492f-4d5b-9190-b0f6f56ad4a4" x="0" y="0" width="950" height="21"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{unsoldList})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{sub_unsold}]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

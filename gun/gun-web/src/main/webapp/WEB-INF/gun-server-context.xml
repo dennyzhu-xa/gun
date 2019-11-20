@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+	http://www.springframework.org/schema/context  
+	http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+   
+    <!-- 資源文件綁定器 -->
+   	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+	   	<property name="basenames">
+	   		<list>
+	   			<value>com.cyber.lottery.message.lottery_messages</value>	   			 			
+	   		</list>	
+	   	</property>
+   	</bean>
+    
+	<bean id="parameterMethodNameResolver" class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
+        <property name="paramName">
+            <value>actionId</value>
+        </property>
+        <property name="defaultMethodName">
+        	<value>init</value>
+    	</property>
+	</bean>
+<!-- 	<bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer"> -->
+<!-- 		<property name="definitions"> -->
+<!-- 			<list> -->
+<!-- 				<value>/WEB-INF/tiles-def.xml</value> -->
+<!-- 			</list> -->
+<!-- 		</property> -->
+		<!-- resolving preparer names as Spring bean definition names -->
+<!-- 		<property name="preparerFactoryClass" value="org.springframework.web.servlet.view.tiles3.SpringBeanPreparerFactory"/> -->
+<!-- 	</bean> -->
+	<!-- 服務代理器 -->
+ 	
+	<!-- Http Request參數解析輔助器 -->
+ 	
+	<!-- 初始化資料載入器 -->
+	
+	
+</beans>

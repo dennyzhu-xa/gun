@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017/7/3 ?U?? 05:10:24 by Hibernate Tools 4.0.0.Final -->
+<hibernate-mapping>
+    <class name="com.cyber.lottery.common.entity.TopUpRecord" table="TOP_UP_RECORD" schema="dbo">
+    	<id name="id" type="big_decimal">
+            <column name="ID" precision="18" scale="0" />
+            <generator class="identity" />
+        </id>
+        <property generated="never" lazy="false" name="androidUserId" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="ANDROID_USER_ID" precision="18"/>
+        </property>
+        <property generated="never" lazy="false" name="dealerId" optimistic-lock="true" type="integer" unique="false">
+            <column name="DEALER_ID"/>
+        </property>
+        <property generated="never" lazy="false" name="topUpAmount" optimistic-lock="true" type="big_decimal" unique="false">
+            <column name="TOP_UP_AMOUNT" precision="20"/>
+        </property>
+        <property generated="never" lazy="false" name="createdDate" optimistic-lock="true" type="timestamp" unique="false">
+            <column length="23" name="CREATED_DATE"/>
+        </property>
+    </class>
+</hibernate-mapping>

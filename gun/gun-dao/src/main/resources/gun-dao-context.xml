@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.2.xsd
+    http://www.springframework.org/schema/util 
+    http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+	
+
+	
+   	<!-- Scans the classpath for annotated components that will be auto-registered as Spring beans.
+         For example @Controller and @Service. Make sure to set the correct base-package
+	<context:component-scan base-package="com.fet.crm.econtract, cafe.identity.web.controller"/>-->
+	<!-- Activates various annotations to be detected in bean classes 
+    <mvc:annotation-driven />-->
+    
+	<!-- 對此project中的所有類進行掃瞄，以完成Bean創建和自動依賴注入的功能 -->
+	<context:component-scan base-package="com.gun.dao" />
+ 	<bean id ="genericDAOImpl" class="com.gun.dao.impl.GenericDAOImpl">
+		<property name="presetSchema" value="db_owner" />
+		<property name="schemas">
+			<map>
+				<entry key="gun">
+					<value></value>
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+</beans>

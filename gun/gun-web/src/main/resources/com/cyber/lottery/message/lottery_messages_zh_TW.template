@@ -1,0 +1,58 @@
+LOTTERY-MSG-I0001 = 登入成功!
+LOTTERY-MSG-I0002 = 註冊成功!
+LOTTERY-MSG-I0003 = 初始化資料成功!
+LOTTERY-MSG-I0004 = 查無資料!
+LOTTERY-MSG-I0005 = 查詢資料成功!
+LOTTERY-MSG-I0006 = 修改資料成功!
+LOTTERY-MSG-I0007 = 新增資料成功!
+LOTTERY-MSG-I0008 = 刪除資料成功!
+LOTTERY-MSG-I0009 = 儲存資料成功!
+LOTTERY-MSG-I0010 = 初始化頁面成功!
+LOTTERY-MSG-I0011 = 複核成功!
+LOTTERY-MSG-I0012 = 重置成功!
+LOTTERY-MSG-I0013 = 處理成功!
+LOTTERY-MSG-I0014 = 賬號凍結成功!
+LOTTERY-MSG-I0015 = 賬號激活成功!
+LOTTERY-MSG-I0016 = 該期數已經被復核!
+
+
+
+
+
+LOTTERY-MSG-E0001 = 登入失敗!
+LOTTERY-MSG-E0002 = 使用者不存在!
+LOTTERY-MSG-E0003 = 密碼錯誤!
+LOTTERY-MSG-E0004 = 註冊失敗!
+LOTTERY-MSG-E0005 = 該用戶已存在!
+LOTTERY-MSG-E0006 = 初始化資料失敗!
+LOTTERY-MSG-E0007 = 查詢資料失敗!
+LOTTERY-MSG-E0008 = 新增資料失敗!
+LOTTERY-MSG-E0009 = 修改資料失敗!
+LOTTERY-MSG-E0010 = 刪除資料失敗!
+LOTTERY-MSG-E0011 = 儲存資料失敗!
+LOTTERY-MSG-E0012 = 資料存取異常:!
+LOTTERY-MSG-E0013 = 功能已不存在!
+LOTTERY-MSG-E0014 = 輸入參數必須有值!
+LOTTERY-MSG-E0015 = 未知的系統錯誤異常,請聯絡應用系統管理員!
+LOTTERY-MSG-E0016 = 頁面資料檢核失敗!
+LOTTERY-MSG-E0017 = 初始化頁面失敗!
+LOTTERY-MSG-E0018 = 角色已不存在!
+LOTTERY-MSG-E0020 = 存在引用,不可刪除!
+LOTTERY-MSG-E0021 = 系統管理員不可刪除!
+LOTTERY-MSG-E0022 = 此function code已存在請重新輸入!
+LOTTERY-MSG-E0023 = 複核失败!
+LOTTERY-MSG-E0024 = 角色已存在!
+LOTTERY-MSG-E0025 = 連接超時!
+LOTTERY-MSG-E0026 = HTTP客戶端關閉失敗!
+LOTTERY-MSG-E0027 = 無效地址!
+LOTTERY-MSG-E0028 = 該經銷商賬號已存在!
+LOTTERY-MSG-E0029 = 該經銷商地址已存在!
+LOTTERY-MSG-E0030 = 經銷商地址檢核失敗!
+LOTTERY-MSG-E0031 = 此經銷商已不存在!
+LOTTERY-MSG-E0032 = 非法操作,系統自動登出!
+LOTTERY-MSG-E0033 = 網絡鏈接逾時,請重新登錄!
+LOTTERY-MSG-E0034 = 重置失敗!
+LOTTERY-MSG-E0035 = 處理失敗!
+LOTTERY-MSG-E0036 = 此賬號已被強迫登出!
+LOTTERY-MSG-E0037 = 賬號設定失敗!
+LOTTERY-MSG-E0038 = 該期數已經被復核!

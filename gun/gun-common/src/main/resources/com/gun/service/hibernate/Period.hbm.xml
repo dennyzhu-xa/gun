@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017/7/4 ?????? 09:29:24 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.cyber.lottery.common.entity.Period" table="PERIOD" schema="dbo">
+        <id name="id" type="big_decimal">
+            <column name="ID" precision="18" scale="0"/>
+            <generator class="identity"/>
+        </id>
+        <property name="period" type="string">
+            <column name="PERIOD" length="30" />
+        </property>
+        <property name="periodState" type="string">
+            <column name="PERIOD_STATE" length="30" />
+        </property>
+        <property name="winninPoster" type="binary">
+            <column name="WINNIN_POSTER" />
+        </property>
+        <property name="createById" type="string">
+            <column name="CREATE_BY_ID" length="50" />
+        </property>
+        <property name="createdByName" type="string">
+            <column name="CREATED_BY_NAME" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="CREATED_DATE" length="23" />
+        </property>
+        <property name="updatedById" type="string">
+            <column name="UPDATED_BY_ID" length="50" />
+        </property>
+        <property name="updatedByName" type="string">
+            <column name="UPDATED_BY_NAME" />
+        </property>
+        <property name="updatedDate" type="timestamp">
+            <column name="UPDATED_DATE" length="23" />
+        </property>
+        <property name="offSale" type="string">
+            <column name="OFF_SALE" length="50" />
+        </property>
+        <property name="onSale" type="string">
+            <column name="ON_SALE" length="50" />
+        </property>
+        <property name="lotteryTimes" type="string">
+            <column name="LOTTERY_TIMES" length="50" />
+        </property>
+        <property name="approveState" type="string">
+            <column name="APPROVE_STATE" length="30" />
+        </property>
+        <property name="approveStateName" type="string">
+            <column name="APPROVE_STATE_NAME" length="50" />
+        </property>
+        <property name="imageUrl" type="string">
+            <column name="IMAGE_URL" length="100" />
+        </property>
+        <property name="lotterySalePrice" type="int">
+            <column name="LOTTERY_SALE_PRICE" />
+        </property>
+        <property name="showSalePrice" type="int">
+            <column name="SHOW_SALE_PRICE" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-7-5 9:47:49 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping >
+    <class name="com.cyber.lottery.common.entity.AndroidUser" dynamic-insert="true" schema="dbo" table="ANDROID_USER">
+        <id name="id" type="big_decimal">
+            <column name="ID" precision="18" scale="0"/>
+            <generator class="identity"/>
+        </id>
+        <property name="username" type="string">
+            <column length="45" name="USERNAME" not-null="true"/>
+        </property>
+        <property name="password" type="string" >
+            <column length="45" name="PASSWORD" not-null="true"/>
+        </property>
+        <property name="passwordSalt" type="string" >
+            <column length="45" name="PASSWORD_SALT" not-null="true"/>
+        </property>
+        <property name="fullName" type="string" >
+            <column length="45" name="FULL_NAME" not-null="true"/>
+        </property>
+        <property name="nrc" type="string" >
+            <column length="45" name="NRC"/>
+        </property>
+        <property name="birthday" type="string" >
+            <column length="23" name="BIRTHDAY"/>
+        </property>
+        <property name="mobileNo" type="string" >
+            <column length="45" name="MOBILE_NO"/>
+        </property>
+        <property name="gender" type="string" >
+            <column length="10" name="GENDER"/>
+        </property>
+        <property name="address" type="string" >
+            <column length="300" name="ADDRESS"/>
+        </property>
+        <property name="detailAddress" type="string" >
+            <column length="300" name="DETAIL_ADDRESS"/>
+        </property>
+        <property   name="status" type="byte" >
+            <column name="STATUS"/>
+        </property>
+        <property name="token" type="string" >
+            <column length="128" name="TOKEN"/>
+        </property>
+        <property name="createById" type="string" >
+            <column length="50" name="CREATE_BY_ID"/>
+        </property>
+        <property name="createdByName" type="string" >
+            <column name="CREATED_BY_NAME"/>
+        </property>
+        <property name="createdDate" type="timestamp" >
+            <column length="23" name="CREATED_DATE"/>
+        </property>
+        <property name="updatedById" type="string" >
+            <column length="50" name="UPDATED_BY_ID"/>
+        </property>
+        <property name="updatedByName" type="string" >
+            <column name="UPDATED_BY_NAME"/>
+        </property>
+        <property name="updatedDate" type="timestamp" >
+            <column length="23" name="UPDATED_DATE"/>
+        </property>
+        <property name="lastLogonTime" type="timestamp" >
+            <column length="23" name="LAST_LOGON_TIME"/>
+        </property>
+        <property name="lastPurchaseTime" type="timestamp" >
+            <column length="23" name="LAST_PURCHASE_TIME"/>
+        </property>
+        <property name="facebookUserId" type="string">
+            <column length="45" name="FACEBOOK_USER_ID"/>
+        </property>
+        <property name="facebookAccount" type="string">
+            <column length="45" name="FACEBOOK_ACCOUNT"/>
+        </property>
+        <property name="pictureUri" type="string">
+            <column length="100" name="PICTURE_URI"/>
+        </property>
+        <property name="bankCardNumber" type="string">
+            <column length="100" name="BANK_CARD_NUMBER"/>
+        </property>
+    </class>
+</hibernate-mapping>

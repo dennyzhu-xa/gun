@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-7-26 14:14:41 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gun.common.entity.Magazine" schema="public" dynamic-update="true" table="magazine">
+        <id name="id" type="integer">
+            <column name="id" precision="18" scale="0" />
+            <generator class="identity" />
+        </id>
+        <property name="magazineName" type="string">
+            <column name="magazine_name" length="200" />
+        </property>
+        <property name="model" type="string">
+            <column name="model" length="100" />
+        </property>
+        <property name="spec" type="string">
+            <column name="spec" length="30" />
+        </property>
+        <property name="unit" type="string">
+            <column name="unit" length="30" />
+        </property>
+        <property name="euipModelName" type="string">
+            <column name="euip_model_name" length="200" />
+        </property>
+        <property name="stockUpperLimit" type="int">
+            <column name="stock_upper_limit"/>
+        </property>
+        <property name="stockLowerLimit" type="int">
+            <column name="stock_lower_limit"/>
+        </property>
+        <property name="Remark" type="text">
+            <column name="remark" />
+        </property>
+        <property name="totalQuantity" type="int">
+            <column name="total_quantity"/>
+        </property>
+        
+        <property name="deleteFlag" type="char">
+            <column name="delete_flag" not-null="true" default="N"/>
+        </property>
+        <property name="createById" type="string" >
+            <column length="50" name="create_by_id"/>
+        </property>
+        <property name="createdByName" type="string" >
+            <column length="50" name="created_by_name"/>
+        </property>
+        <property name="createdDate" type="timestamp" >
+            <column length="23" name="created_date"/>
+        </property>
+        <property name="updatedById" type="string" >
+            <column length="50" name="UPDATED_BY_ID"/>
+        </property>
+        <property name="updatedByName" type="string" >
+            <column length="50" name="UPDATED_BY_NAME"/>
+        </property>
+        <property name="updatedDate" type="timestamp" >
+            <column length="23" name="UPDATED_DATE"/>
+        </property>
+    </class>
+</hibernate-mapping>

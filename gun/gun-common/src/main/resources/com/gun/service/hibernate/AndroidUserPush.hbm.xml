@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-7-5 9:47:49 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping >
+    <class name="com.cyber.lottery.common.entity.AndroidUserPush" dynamic-insert="true" schema="dbo" table="ANDROID_USER_PUSH">
+        <id name="pushId" type="big_decimal">
+            <column name="PUSH_ID" precision="1" scale="1"/>
+            <generator class="identity"/>
+        </id>
+        <property name="theme" type="string">
+            <column length="50" name="THEME" />
+        </property>
+        <property name="content" type="string">
+            <column length="300" name="CONTENT" />
+        </property>
+        <property name="userId" type="big_decimal">
+            <column name="USER_ID" precision="18" scale="0" />
+        </property>
+        <property name="createdDate" type="timestamp" >
+            <column length="23" name="CREATED_DATE"/>
+        </property>
+        <property name="failureTime" type="string">
+            <column length="50" name="FAILURE_TIME" />
+        </property>
+        <property name="pushState" type="java.lang.Integer">
+            <column name="PUSH_STATE" />
+        </property>
+        <property name="pushSuccess" type="string">
+            <column length="10" name="PUSH_SUCCESS" />
+        </property>
+        <property name="lotteryRound" type="string">
+            <column length="30" name="LOTTERY_ROUND" />
+        </property>
+        <property name="pushType" type="string">
+            <column length="10" name="PUSH_TYPE" />
+        </property>
+        <property name="pushImg" type="binary">
+            <column name="PUSH_IMG" />
+        </property>
+    </class>
+</hibernate-mapping>

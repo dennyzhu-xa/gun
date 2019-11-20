@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-6-1 18:10:41 by Hibernate Tools 4.0.1.Final -->
+<hibernate-mapping>
+    <class name="com.gun.common.entity.RoleAuthority" table="ROLE_AUTHORITY" schema="db_owner">
+        <id name="seq" type="integer">
+            <column name="seq" precision="18" scale="0" />
+            <generator class="identity" />
+        </id>
+        <property name="functionId" type="string">
+            <column name="function_id" length="100" not-null="true" />
+        </property>
+        <property name="roleId" type="integer">
+            <column name="role_id" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
